@@ -6,21 +6,36 @@
       "image": "manubhatti/multiclient",
       "hostname": "client",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "command": [
+        "tail",
+        "-f",
+        "/bin/bash"
+      ]
     },
     {
       "name": "server",
       "image": "manubhatti/multiserver",
       "hostname": "api",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "command": [
+        "tail",
+        "-f",
+        "/bin/bash"
+      ]
     },
     {
       "name": "worker",
       "image": "manubhatti/multiworker",
       "hostname": "worker",
       "essential": false,
-      "memory": 128
+      "memory": 128,
+      "command": [
+        "tail",
+        "-f",
+        "/bin/bash"
+      ]
     },
     {
       "name": "nginx",
@@ -34,7 +49,12 @@
         }
       ],
       "links": ["client", "server"],
-      "memory": 128
+      "memory": 128,
+      "command": [
+        "tail",
+        "-f",
+        "/bin/bash"
+      ]
     }
   ]
 }
